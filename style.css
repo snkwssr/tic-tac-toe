@@ -11,9 +11,12 @@
 
 /* ゲーム盤のレイアウト */
 #board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  width: 90vw;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 
@@ -23,15 +26,15 @@
 
 /* 1マスの見た目 */
 .cell {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    font-size: 48px;
+  aspect-ratio: 1 / 1;   /* 正方形を維持 */
+  font-size: 10vw;
+  max-font-size: 48px;
 
-    /* 中央寄せ */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid black;
 }
 
 /* ○が置かれたセル（オレンジ系） */
