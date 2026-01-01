@@ -26,9 +26,10 @@
 
 /* 1マスの見た目 */
 .cell {
-  aspect-ratio: 1 / 1;   /* 正方形を維持 */
-  font-size: 10vw;
-  max-font-size: 48px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  font-size: min(10vw, 48px);
 
   display: flex;
   align-items: center;
@@ -39,35 +40,39 @@
 
 /* ○が置かれたセル（オレンジ系） */
 .cell.o {
-    background-color: #ffe0b2; /* 薄いオレンジ */
-    color: #e65100;            /* 文字を濃く */
+  background-color: #ffe0b2;
+  /* 薄いオレンジ */
+  color: #e65100;
+  /* 文字を濃く */
 }
 
 /* ×が置かれたセル（青系） */
 .cell.x {
-    background-color: #e3f2fd; /* 薄い青 */
-    color: #0d47a1;
+  background-color: #e3f2fd;
+  /* 薄い青 */
+  color: #0d47a1;
 }
 
 /* 勝利ライン（緑） */
 .cell.win-o,
 .cell.win-x {
-    background-color: #c8e6c9; /* 薄い緑 */
+  background-color: #c8e6c9;
+  /* 薄い緑 */
 }
 
 
 /* リセットボタン */
 #resetButton {
-    margin-top: 15px;
-    padding: 10px 20px;
-    font-size: 16px;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
 
-    background-color: #388e3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* 先手後手ボタン群 */
@@ -77,10 +82,12 @@
   gap: 10px;
   margin-bottom: 15px;
 }
+
 /* ボタンを隙間なく並べる*/
 .button-group {
   display: flex;
 }
+
 /* 共通のボタン見た目 */
 .button-group button {
   padding: 6px 14px;
@@ -90,13 +97,16 @@
   font-size: 14px;
   cursor: pointer;
 }
+
 /*角をまとめる*/
 .button-group button:first-child {
   border-radius: 5px 0 0 5px;
 }
+
 .button-group button:last-child {
   border-radius: 0 5px 5px 0;
-  border-left: none; /* 境目を1本に */
+  border-left: none;
+  /* 境目を1本に */
 }
 
 
@@ -108,7 +118,7 @@
 
 /* リセットボタンにマウスを乗せたとき */
 #resetButton:hover {
-    background-color: #2e7d32;
+  background-color: #2e7d32;
 }
 
 /* 選択中（トグルON） */
