@@ -1,1 +1,129 @@
+/* =========================
+    ① 全体・共通設定
+========================= */
 
+/* （今回は特になし） */
+
+
+/* =========================
+    ② レイアウト（配置）
+========================= */
+
+/* ゲーム盤のレイアウト */
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  width: 90vw;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   ③ パーツ（部品）
+========================= */
+
+/* 1マスの見た目 */
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  font-size: min(10vw, 48px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid black;
+}
+
+/* ○が置かれたセル（オレンジ系） */
+.cell.o {
+  background-color: #ffe0b2;
+  /* 薄いオレンジ */
+  color: #e65100;
+  /* 文字を濃く */
+}
+
+/* ×が置かれたセル（青系） */
+.cell.x {
+  background-color: #e3f2fd;
+  /* 薄い青 */
+  color: #0d47a1;
+}
+
+/* 勝利ライン（緑） */
+.cell.win-o,
+.cell.win-x {
+  background-color: #c8e6c9;
+  /* 薄い緑 */
+}
+
+
+/* リセットボタン */
+#resetButton {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+/* 先手後手ボタン群 */
+.turn-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* ボタンを隙間なく並べる*/
+.button-group {
+  display: flex;
+}
+
+/* 共通のボタン見た目 */
+.button-group button {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/*角をまとめる*/
+.button-group button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.button-group button:last-child {
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+  /* 境目を1本に */
+}
+
+
+
+
+/* =========================
+   ④ 状態・効果
+========================= */
+
+/* リセットボタンにマウスを乗せたとき */
+#resetButton:hover {
+  background-color: #2e7d32;
+}
+
+/* 選択中（トグルON） */
+.button-group button.active {
+  background-color: #f7b400;
+  color: white;
+  border-color: #f7b400;
+}
